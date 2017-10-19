@@ -1,0 +1,256 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  color: black;
+  background-color: whitesmoke;
+  font-size: 16px;
+}
+
+h1 {
+  background-color: inherit;
+  color: gold;
+  font-size: 10vh;
+  padding: 5px;
+  max-width: 760px;
+}
+
+h2 {
+  font-size: 10vh;
+}
+
+h3 {
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#aboutSection {
+  display: flex;
+  justify-content: center;
+}
+
+#workSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#contactSection {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightpink;
+  color: inherit;
+  padding: 20px;
+}
+
+/* hamburger-menu container */
+#barContainer {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 100;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: gold; /*orangered*/
+    color: inherit;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar in hamburger-menu */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar in hamburger-menu */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar in hamburger-menu */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* site menu that hides/shows when pressing hamburger-menu icon */
+.menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: rgba(0, 233, 188, 1);*/
+  background-color: rgba(245, 245, 245, 1);
+  z-index: 3;
+  transition: 0.4s;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover, .grow:active {
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+/* arrow indicating that there's more content for user */
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -20px;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("https://maxcdn.icons8.com/Share/icon/win8/Arrows//expand_arrow1600.png");
+  background-size: contain;
+  -webkit-animation: bounce 3s infinite;
+  -moz-animation: bounce 3s infinite;
+  -o-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
+  transition: opacity 1200ms;
+}
+
+.hidden {
+  display: none;
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 760px;
+  width: 100%;
+}
+
+.work {
+  height: 240px;
+  width: 360px;
+  background-color: lightgrey;
+  margin-bottom: 20px;
+}
+
+.workContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fillerContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px 0 150px 0;
+}
+
+.fillerContainer .container {
+  width: auto;
+}
+
+.contactButton {
+
+}
+
+.quiz {
+  /*text-align: center;*/
+  max-width: 240px;
+}
+
+.quiz .container {
+
+}
+
+.answer {
+  text-align: center;
+  background-color: orangered;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 1rem 0 1rem 0;
+  transition: all 0.6s;
+}
+
+.answer p {
+  color: white;
+  /*background-color: orangered;*/
+}
+
+.correctAnswer {
+  background-color: lightgreen;
+}
+
+.quiz h3, p {
+  color: grey;
+}
+
+.rainbowGradient {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.4, #2ff), color-stop(0.5, #2f2),color-stop(0.55, #2f2), color-stop(0.8, #ff2), color-stop(1, #f22) );
+ background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+ color:transparent;
+ -webkit-background-clip: text;
+ background-clip: text;
+ padding: 0 25px 0 25px;
+}
+
+.rainbowGradientAnimated {
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: relative;
+    background-image: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+.clipText {
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.clipBox {
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
