@@ -27,6 +27,25 @@
     </div>
   </div>
 
+  <!-- quiz score -->
+  <div id="scoreContainer" class="scoreContainer hidden">
+    <h3><span style="font-size:1rem; font-weight: lighter;">score</span><span id="currentScore">0</span></h3>
+    <div id="score" class="container">
+      <div class="score">
+
+      </div>
+      <div class="score">
+
+      </div>
+      <div class="score">
+
+      </div>
+      <div class="score">
+
+      </div>
+    </div>
+  </div>
+
   <section id="aboutSection">
     <div class="container">
       <h1>Daniel Alfredsson</h1>
@@ -76,7 +95,9 @@
 
     <div class="workContainer">
       <div class="work">
-
+        <div class="container">
+          <img src="img/work1.png" alt="">
+        </div>
       </div>
 
       <div class="fillerContainer">
@@ -103,10 +124,39 @@
       </div>
 
       <div class="work">
+        <div class="container">
+          <img src="img/work2.png" alt="">
+        </div>
 
       </div>
 
+      <div class="fillerContainer">
+        <div class="container">
+          <div class="quiz">
+            <h3>Daniel mini-quiz!</h3>
+            <p>Daniel lives in Malmö today, but where did he grow up?</p>
+            <div class="container">
+              <div class="answer grow" onclick="checkAnswer(this, 3.1)">
+                <p>Stockholm</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 3.2)">
+                <p>Karlstad</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 3.3)">
+                <p>Borlänge</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 3.4)">
+                <p>Trelleborg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="work">
+        <div class="container">
+          <img src="img/work1.png" alt="">
+        </div>
 
       </div>
     </div>
@@ -119,16 +169,16 @@
         <h3>Daniel mini-quiz!</h3>
         <p>What's Daniel's favourite genre of movie?</p>
         <div class="container">
-          <div class="answer grow" onclick="checkAnswer(this, 3.1)">
+          <div class="answer grow" onclick="checkAnswer(this, 4.1)">
             <p>Drama</p>
           </div>
-          <div class="answer grow" onclick="checkAnswer(this, 3.2)">
+          <div class="answer grow" onclick="checkAnswer(this, 4.2)">
             <p>Sci-fi</p>
           </div>
-          <div class="answer grow" onclick="checkAnswer(this, 3.3)">
+          <div class="answer grow" onclick="checkAnswer(this, 4.3)">
             <p>Comedy</p>
           </div>
-          <div class="answer grow" onclick="checkAnswer(this, 3.4)">
+          <div class="answer grow" onclick="checkAnswer(this, 4.4)">
             <p>Action</p>
           </div>
         </div>
