@@ -46,7 +46,12 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: lightpink;
+  /*background-color: lightpink;*/
+  background: #ffd6de; /* Old Browsers */
+  background: -webkit-linear-gradient(bottom,#ffd6de,#ffc4ca); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom,#ffd6de,#ffc4ca); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom,#ffd6de,#ffc4ca); /*Fx 3.6-15*/
+  background: linear-gradient(to top, #ffd6de, #ffc4ca); /*Standard*/
   color: inherit;
   padding: 20px;
 }
@@ -95,9 +100,18 @@ a {
   justify-content: center;
   align-items: center;
   /*background-color: rgba(0, 233, 188, 1);*/
-  background-color: rgba(245, 245, 245, 1);
+  /*background-color: rgba(245, 245, 245, 1);*/
+  background: #74ecca; /* Old Browsers */
+  background: -webkit-linear-gradient(top,#74ecca,#9efecc); /*Safari 5.1-6*/
+  background: -o-linear-gradient(top,#74ecca,#9efecc); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(top,#74ecca,#9efecc); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, #74ecca, #9efecc); /*Standard*/
   z-index: 3;
   transition: 0.4s;
+}
+
+.menuContainer a h2 {
+  opacity: 0;
 }
 
 .scoreContainer {
@@ -109,6 +123,8 @@ a {
 .scoreContainer h3 {
   font-size: 10vh;
   margin: 0;
+  background-color: rgba(245, 245, 245, 0.6);
+  z-index: 1001;
 }
 
 .scoreContainer .container {
@@ -220,7 +236,7 @@ a {
 }
 
 .correctAnswer {
-  background-color: lightgreen;
+  background-color: forestgreen;
 }
 
 .wrongAnswer {

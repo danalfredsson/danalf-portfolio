@@ -20,6 +20,13 @@ var windowHeight = window.innerHeight;
 var quizStarted = false;
 var currentScore = 0;
 var quizClicks = 0;
+var menuOpen = false;
+var quizAnswers = {
+  1: 1,
+  2: 3,
+  3: 3,
+  4: 2
+};
 
 //function that toggles the menu
 function toggleMenu(x) {
@@ -28,6 +35,65 @@ function toggleMenu(x) {
   $("#barContainer").children().toggleClass("clipBox");
   document.getElementById("menu").classList.toggle("hidden");
   document.body.classList.toggle("noScroll");
+  animateMenu();
+}
+
+function animateMenu() {
+  var menuItems = $(".menuContainer").children();
+  menuItems = $(menuItems).find("h2");
+  console.log(menuItems);
+  //get the children of the children
+  var basicTimeline = anime.timeline();
+
+basicTimeline
+  .add({
+    targets: menuItems[0],
+    opacity: 1,
+    duration: 100,
+    easing: 'easeOutExpo'
+  })
+  .add({
+    targets: menuItems[1],
+    opacity: 1,
+    duration: 100,
+    easing: 'easeOutExpo'
+  })
+  .add({
+    targets: menuItems[2],
+    opacity: 1,
+    duration: 100,
+    easing: 'easeOutExpo'
+  })
+  .add({
+    targets: menuItems[3],
+    opacity: 1,
+    duration: 100,
+    easing: 'easeOutExpo'
+  });
+
+  console.log(menuOpen);
+
+  if (menuOpen) {
+    menuOpen = false;
+    // remove children after fade out
+    var promise = basicTimeline.finished.then(()=>{
+      for (var i = 0; i < menuItems.length; i++) {
+        console.log("opacity");
+        menuItems[i].style.opacity = "0";
+      }
+    });
+  } else if (!menuOpen) {
+    menuOpen = true;
+  }
+
+}
+
+//set th eopacity of the menu back to 0
+function setOpacity() {
+  for (var i = 0; i < menuItems.length; i++) {
+    console.log("opacity");
+    menuItems[i].style.opacity = "0";
+  }
 }
 
 //function that closes menu after clicking link
@@ -37,6 +103,13 @@ function closeMenu() {
   $("#barContainer").children().toggleClass("clipBox");
   document.getElementById("menu").classList.toggle("hidden");
   document.body.classList.toggle("noScroll");
+  var menuItems = $(".menuContainer").children();
+  menuItems = $(menuItems).find("h2");
+  console.log(menuItems);
+  for (var i = 0; i < menuItems.length.length; i++) {
+    menuItems[i].style.opacity  = "0";
+    menuOpen = false;
+  }
 }
 
 //function that pauses or plays video
@@ -82,7 +155,8 @@ function checkAnswer(el, x) {
   var question = Math.floor(x);
   var answer = String(x).slice(-1);
   console.log("answer: " + answer);
-  //clicked element container
+  //clicked element + container
+  var element = el;
   var container = el.parentElement;
   //which chldren to remove
   var childrenToRemove;
@@ -93,56 +167,60 @@ function checkAnswer(el, x) {
 
   switch (question) {
     case 1:
-      correctAnswer = 1;
+      correctAnswer = quizAnswers[(question)];
       correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
       console.log(correctElement);
+      $(correctElement).prop('onclick',null).off('click');
       childrenToRemove = $(container).children().not(correctElement);
       // console.log(childrenToRemove);
       removeChild(container, correctElement, childrenToRemove);
       if (answer == correctAnswer) {
-        quizScore(1, question);
+        quizScore(1, question, element);
       } else {
-        quizScore(0, question);
+        quizScore(0, question, element);
       }
       break;
     case 2:
-      correctAnswer = 3;
+      correctAnswer = quizAnswers[(question)];
       correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
+      $(correctElement).prop('onclick',null).off('click');
       // console.log(correctElement);
       childrenToRemove = $(container).children().not(correctElement);
       // console.log(childrenToRemove);
       removeChild(container, correctElement, childrenToRemove);
       if (answer == correctAnswer) {
-        quizScore(1, question);
+        quizScore(1, question, element);
       } else {
-        quizScore(0, question);
+        quizScore(0, question, element);
       }
       break;
     case 3:
-      correctAnswer = 3;
+      correctAnswer = quizAnswers[(question)];
       correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
+      $(correctElement).prop('onclick',null).off('click');
       // console.log(correctElement);
       childrenToRemove = $(container).children().not(correctElement);
       // console.log(childrenToRemove);
       removeChild(container, correctElement, childrenToRemove);
       if (answer == correctAnswer) {
-        quizScore(1, question);
+        quizScore(1, question, element);
       } else {
-        quizScore(0, question);
+        quizScore(0, question, element);
       }
       break;
     case 4:
-      correctAnswer = 2;
+      correctAnswer = quizAnswers[(question)];
       correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
+      $(correctElement).prop('onclick',null).off('click');
       // console.log(correctElement);
       childrenToRemove = $(container).children().not(correctElement);
       // console.log(childrenToRemove);
       removeChild(container, correctElement, childrenToRemove);
       console.log("answer: " + answer);
       if (answer == correctAnswer) {
-        quizScore(1, question);
+        quizScore(1, question, element);
       } else {
-        quizScore(0, question);
+        quizScore(0, question, element);
       }
       break;
     default:
@@ -151,7 +229,7 @@ function checkAnswer(el, x) {
 }
 
 //function that create score for quiz
-function quizScore(correct, nr) {
+function quizScore(correct, nr, el) {
   //check if this is first question answered
   if (quizStarted === false) {
     var score = document.getElementById("scoreContainer");
@@ -169,15 +247,19 @@ function quizScore(correct, nr) {
     console.log("adding to score");
     currentScore++;
     console.log(currentScore);
+    // console.log(clickedElement);
+    // clickedElement.onclick = null;
     //function that waits 400 millis and add to score
     window.setTimeout(function() {
       document.getElementById("currentScore").innerHTML = currentScore;
       clickedElement.classList.add("correctAnswer");
+      $(clickedElement).prop('onclick',null).off('click');
     }, 400);
-    console.log(scores);
-    console.log(clickedElement);
+    // console.log(scores);
+    // console.log(clickedElement);
   }
   else {
+    el.classList.add("wrongAnswer");
     window.setTimeout(function() {
       document.getElementById("currentScore").innerHTML = currentScore;
       clickedElement.classList.add("wrongAnswer");
@@ -189,7 +271,7 @@ function quizScore(correct, nr) {
 function removeChild(container, correctElement, childrenToRemove) {
   console.log(childrenToRemove);
 
-  $(correctElement).css("background-color", "lightgreen");
+  $(correctElement).css("background-color", "forest1green");
 
   var relativeOffset = anime.timeline();
 
@@ -219,7 +301,7 @@ function removeChild(container, correctElement, childrenToRemove) {
       display: 'none'
     });
 
-  // REMOVE CHILDREN AFTER FADING OUT
+  // remove children after fade out
   var promise = relativeOffset.finished.then(logFinished);
 
   function logFinished() {
