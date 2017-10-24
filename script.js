@@ -41,7 +41,8 @@ function toggleMenu(x) {
 function animateMenu() {
   var menuItems = $(".menuContainer").children();
   menuItems = $(menuItems).find("h2");
-  console.log(menuItems);
+  //console.log(menuItems);
+
   //get the children of the children
   var basicTimeline = anime.timeline();
 
@@ -71,8 +72,6 @@ basicTimeline
     easing: 'easeOutExpo'
   });
 
-  console.log(menuOpen);
-
   if (menuOpen) {
     menuOpen = false;
     // remove children after fade out
@@ -88,7 +87,7 @@ basicTimeline
 
 }
 
-//set th eopacity of the menu back to 0
+//set the opacity of the menu back to 0
 function setOpacity() {
   for (var i = 0; i < menuItems.length; i++) {
     console.log("opacity");
@@ -149,15 +148,18 @@ function videoWidth() {
 
 //function that checks answer for quiz
 function checkAnswer(el, x) {
-  console.log("running checkAnswer...");
 
   //calculate x to get which quiz initiated + clicked answer
   var question = Math.floor(x);
   var answer = String(x).slice(-1);
-  console.log("answer: " + answer);
-  //clicked element + container
+  correctAnswer = quizAnswers[(question)];
+  //console.log("answer: " + answer);
+  //console.log("correct answer: " + correctAnswer);
+
+  //clicked element, container to that element + element respresenting correct answer
   var element = el;
   var container = el.parentElement;
+  correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
   //which chldren to remove
   var childrenToRemove;
   //correct answer
@@ -167,65 +169,106 @@ function checkAnswer(el, x) {
 
   switch (question) {
     case 1:
-      correctAnswer = quizAnswers[(question)];
-      correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
-      console.log(correctElement);
+      var fillerContainer = document.getElementById("filler1");
+      //turn off onclick on correct answer
       $(correctElement).prop('onclick',null).off('click');
       childrenToRemove = $(container).children().not(correctElement);
-      // console.log(childrenToRemove);
       removeChild(container, correctElement, childrenToRemove);
       if (answer == correctAnswer) {
+        var emoji = document.createElement("h2");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = "👏";
+        animateEmoji(emoji, fillerContainer);
         quizScore(1, question, element);
       } else {
+        var emoji = document.createElement("h2");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = "😞";
+        animateEmoji(emoji, fillerContainer);
         quizScore(0, question, element);
       }
       break;
     case 2:
-      correctAnswer = quizAnswers[(question)];
-      correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
+      var fillerContainer = document.getElementById("filler2");
+      //turn off onclick on correct answer
       $(correctElement).prop('onclick',null).off('click');
-      // console.log(correctElement);
       childrenToRemove = $(container).children().not(correctElement);
-      // console.log(childrenToRemove);
       removeChild(container, correctElement, childrenToRemove);
       if (answer == correctAnswer) {
+        var emoji = document.createElement("h2");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = "👏";
+        animateEmoji(emoji, fillerContainer);
         quizScore(1, question, element);
       } else {
+        var emoji = document.createElement("h2");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = "😞";
+        animateEmoji(emoji, fillerContainer);
         quizScore(0, question, element);
       }
       break;
     case 3:
-      correctAnswer = quizAnswers[(question)];
-      correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
+      var fillerContainer = document.getElementById("filler3");
+      //turn off onclick on correct answer
       $(correctElement).prop('onclick',null).off('click');
-      // console.log(correctElement);
       childrenToRemove = $(container).children().not(correctElement);
-      // console.log(childrenToRemove);
       removeChild(container, correctElement, childrenToRemove);
       if (answer == correctAnswer) {
+        var emoji = document.createElement("h2");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = "👏";
+        animateEmoji(emoji, fillerContainer);
         quizScore(1, question, element);
       } else {
+        var emoji = document.createElement("h2");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = "😞";
+        animateEmoji(emoji, fillerContainer);
         quizScore(0, question, element);
       }
       break;
     case 4:
-      correctAnswer = quizAnswers[(question)];
-      correctElement = $(container).children(".answer:nth-child(" + correctAnswer + ")");
+      var fillerContainer = document.getElementById("filler4");
+      //turn off onclick on correct answer
       $(correctElement).prop('onclick',null).off('click');
-      // console.log(correctElement);
       childrenToRemove = $(container).children().not(correctElement);
-      // console.log(childrenToRemove);
       removeChild(container, correctElement, childrenToRemove);
-      console.log("answer: " + answer);
       if (answer == correctAnswer) {
+        var emoji = document.createElement("h2");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = "👏";
+        animateEmoji(emoji, fillerContainer);
         quizScore(1, question, element);
       } else {
+        var emoji = document.createElement("h2");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = "😞";
+        animateEmoji(emoji, fillerContainer);
         quizScore(0, question, element);
       }
       break;
     default:
 
   }
+}
+
+function animateEmoji(obj, container) {
+  container.appendChild(obj);
+
+  var fadeOpac = anime({
+  targets: obj,
+  opacity: 1,
+  translateY: -250,
+  duration: 500
+});
+//remove children after fade out
+var promise = fadeOpac.finished.then(removeEmoji);
+
+function removeEmoji() {
+  console.log("removing emoji...");
+  obj.remove();
+}
 }
 
 //function that create score for quiz
@@ -246,17 +289,13 @@ function quizScore(correct, nr, el) {
   if (correct == 1) {
     console.log("adding to score");
     currentScore++;
-    console.log(currentScore);
-    // console.log(clickedElement);
-    // clickedElement.onclick = null;
+
     //function that waits 400 millis and add to score
     window.setTimeout(function() {
       document.getElementById("currentScore").innerHTML = currentScore;
       clickedElement.classList.add("correctAnswer");
       $(clickedElement).prop('onclick',null).off('click');
     }, 400);
-    // console.log(scores);
-    // console.log(clickedElement);
   }
   else {
     el.classList.add("wrongAnswer");
@@ -270,8 +309,9 @@ function quizScore(correct, nr, el) {
 //function that animates and removes quiz answers that aren't correct
 function removeChild(container, correctElement, childrenToRemove) {
   console.log(childrenToRemove);
-
-  $(correctElement).css("background-color", "forest1green");
+  console.log(correctElement);
+  correctElement[0].classList.add("correctAnswer");
+  //$(correctElement).css("background-color", "forest1green");
 
   var relativeOffset = anime.timeline();
 
@@ -280,7 +320,7 @@ function removeChild(container, correctElement, childrenToRemove) {
       targets: childrenToRemove[0],
       opacity: 0,
       duration: 400,
-      easing: 'easeOutExpo',
+      easing: 'easeOutExpo'
     })
     .add({
       targets: childrenToRemove[1],
@@ -295,13 +335,9 @@ function removeChild(container, correctElement, childrenToRemove) {
       duration: 400,
       easing: 'easeOutExpo',
       offset: '-=400' // Starts 800ms before the previous animation ends
-    })
-    .add({
-      targets: [childrenToRemove],
-      display: 'none'
     });
 
-  // remove children after fade out
+  //remove children after fade out
   var promise = relativeOffset.finished.then(logFinished);
 
   function logFinished() {

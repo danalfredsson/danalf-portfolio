@@ -15,6 +15,7 @@ h1 {
   font-size: 10vh;
   padding: 5px;
   max-width: 760px;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 h2 {
@@ -112,6 +113,7 @@ a {
 
 .menuContainer a h2 {
   opacity: 0;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 .scoreContainer {
@@ -138,6 +140,11 @@ a {
   border-radius: 25px;
   background-color: lightgrey;
   transition: background-color 0.2s ease-in;
+}
+
+.emoji {
+  opacity: 0;
+  position: absolute;
 }
 
 .grow {
@@ -236,11 +243,19 @@ a {
 }
 
 .correctAnswer {
-  background-color: forestgreen;
+  background: #74ecca; /* Old Browsers */
+  background: -webkit-linear-gradient(top,#74ecca,#9efecc); /*Safari 5.1-6*/
+  background: -o-linear-gradient(top,#74ecca,#9efecc); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(top,#74ecca,#9efecc); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, #74ecca, #9efecc); /*Standard*/
 }
 
 .wrongAnswer {
-  background-color: orangered;
+  background: #ff733f; /* Old Browsers */
+  background: -webkit-linear-gradient(top,#ff733f,#ff4500); /*Safari 5.1-6*/
+  background: -o-linear-gradient(top,#ff733f,#ff4500); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(top,#ff733f,#ff4500); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, #ff733f, #ff4500); /*Standard*/
 }
 
 .quiz h3, p {
