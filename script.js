@@ -16,7 +16,7 @@ var quiz = [{
       "Swedens most southern town – Trelleborg"
     ],
     correct: 3,
-    text: "Daniel grew up in the heart of Sweden – Dalarna. He can't think of a place more beautiful but god damn it's boring up there. So he moved to Malmö in 2014."
+    text: "Daniel grew up in the heart of Sweden – Borlänge, Dalarna. It's very beautiful there but also very boring, so he moved to Malmö in 2014."
   },
   {
     question: "What particular area of interaction design is Daniel particularly interested in?",
