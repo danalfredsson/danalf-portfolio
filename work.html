@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Work</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="workStyle.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Oswald" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="navContainer">
+  </header>
+
+  <!-- hamburger-menu icon -->
+  <div id="barContainer" class="grow" onclick="toggleMenu(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  </div>
+
+  <!-- site menu that hides/shows when pressing hamburger-menu icon -->
+  <div id="menu" class="hidden menu">
+    <div class="menuContainer">
+      <a href="index.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Home</h2></a>
+      <a href="about.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">About</h2></a>
+      <a href="work.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Work</h2></a>
+      <a href="contact.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Contact</h2></a>
+    </div>
+  </div>
+
+<!------------------------>  <!-- page content --> <!------------------------>
+
+  <div class="container">
+    <h1 id="work">Work</h1>
+  </div>
+
+  <section class="contactSection">
+    <div class="container">
+      <h1 style="color: whitesmoke">Contact</h1>
+    </div>
+    <div class="container">
+      <p>alfredsson.d@gmail.com</p>
+      <p>Instagram</p>
+      <p>Spotify</p>
+      <p>Facebook</p>
+      <p>LinkedIn</p>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="anime.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="spotify-web-api.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="aboutStyle.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Archivo+Black" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="navContainer">
+  </header>
+
+  <!-- hamburger-menu icon -->
+  <div id="barContainer" class="grow" onclick="toggleMenu(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  </div>
+
+  <!-- site menu that hides/shows when pressing hamburger-menu icon -->
+  <div id="menu" class="hidden menu">
+    <div class="menuContainer">
+      <a href="index.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Home</h2></a>
+      <a href="about.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">About</h2></a>
+      <a href="work.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Work</h2></a>
+      <a href="contact.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Contact</h2></a>
+    </div>
+  </div>
+
+  <!------------------------>  <!-- page content --> <!------------------------>
+
+  <div class="aboutContainer">
+
+    <div class="container">
+      <h1>About</h1>
+    </div>
+
+    <div class="container" style="position: relative">
+      <video id="video" src="/img/video.mp4" preload="auto" playsinline loop poster="img/poster.png">
+                    There was suppose to be a video here, but unfortunetely your browser doesn't support
+                    embedded videos.
+            </video>
+      <div class="container">
+        <p>text about how im still naive. and ambitious. or something like that. </p>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="fillerContainer">
+      <div class="container">
+        <div id="quizPos" class="container quizContainer">
+          <div class="quiz">
+            <h3>Daniel mini-quiz!</h3>
+            <p id="quizQuestion">At what age did Daniel get his first job?</p>
+            <div id="quizAnswers" class="container">
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+      <p id="aboutText"></p>
+    </div>
+
+  <!--
+    <div class="fillerContainer">
+      <div class="container">
+        <div class="container quizContainer">
+          <div class="quiz">
+            <h3>Daniel mini-quiz!</h3>
+            <p>At what age did Daniel get his first job?</p>
+            <div id="quiz1" class="container">
+              <div class="answer grow" onclick="checkAnswer(this, 1.1)">
+                <p>Fourteen</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 1.2)">
+                <p>Twenty-one</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 1.3)">
+                <p>Seventeen</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 1.4)">
+                <p>Fifteen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container quizContainer">
+          <div class="quiz">
+            <h3>Daniel mini-quiz!</h3>
+            <p>What did Daniel wanna be when he grew up?</p>
+            <div class="container">
+              <div class="answer grow" onclick="checkAnswer(this, 2.1)">
+                <p>Police officer</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 2.2)">
+                <p>Interaction designer</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 2.3)">
+                <p>Paleontologist</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 2.4)">
+                <p>Astronaut</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fillerContainer">
+      <div class="container">
+        <div class="container quizContainer">
+          <div class="quiz">
+            <h3>Daniel mini-quiz!</h3>
+            <p>Daniel lives in Malmö today, but where did he grow up?</p>
+            <div class="container">
+              <div class="answer grow" onclick="checkAnswer(this, 3.1)">
+                <p>Stockholm</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 3.2)">
+                <p>Karlstad</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 3.3)">
+                <p>Borlänge</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 3.4)">
+                <p>Trelleborg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container quizContainer">
+          <div class="quiz">
+            <h3>Daniel mini-quiz!</h3>
+            <p>What's Daniel's favourite genre of movie?</p>
+            <div class="container">
+              <div class="answer grow" onclick="checkAnswer(this, 4.1)">
+                <p>Drama</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 4.2)">
+                <p>Sci-fi</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 4.3)">
+                <p>Comedy</p>
+              </div>
+              <div class="answer grow" onclick="checkAnswer(this, 4.4)">
+                <p>Action</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  </div>
+
+  </div>
+
+  <section class="contactSection">
+    <div class="container">
+      <h1 style="color: whitesmoke">Contact</h1>
+    </div>
+    <div class="container">
+      <p>alfredsson.d@gmail.com</p>
+      <p>Instagram</p>
+      <p>Spotify</p>
+      <p>Facebook</p>
+      <p>LinkedIn</p>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="anime.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="spotify-web-api.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+
+</body>
+
+</html>

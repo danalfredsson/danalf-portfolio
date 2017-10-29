@@ -6,86 +6,59 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Daniel Alfredsson</title>
   <link rel="stylesheet" href="style.css" type="text/css">
-  <link rel="stylesheet" href="animate.css">
-  <link href="https://fonts.googleapis.com/css?family=Anton|Archivo+Black" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Oswald" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- hamburger-menu icon -->
-  <div id="barContainer" class="grow" onclick="toggleMenu(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-  </div>
+<header>
+  <div class="navContainer">
+      </div>
+</header>
+
+<!-- hamburger-menu icon -->
+<div id="barContainer" class="grow" onclick="toggleMenu(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+</div>
 
   <!-- site menu that hides/shows when pressing hamburger-menu icon -->
   <div id="menu" class="hidden menu">
     <div class="menuContainer">
-      <a href="#aboutSection" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">About</h2></a>
-      <a href="#workSection" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Work</h2></a>
-      <a href="#contactSection" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Contact</h2></a>
-      <a href="#" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">CV</h2></a>
+      <a href="index.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Home</h2></a>
+      <a href="about.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">About</h2></a>
+      <a href="work.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Work</h2></a>
+      <a href="contact.html" onclick="closeMenu()"><h2 class="rainbowGradientAnimated clipText grow menuItems">Contact</h2></a>
     </div>
   </div>
 
-  <!-- quiz score -->
-  <div id="scoreContainer" class="scoreContainer hidden">
-    <h3><span style="font-size:1rem; font-weight: lighter;">score</span><span id="currentScore">0</span></h3>
-    <div id="score" class="container">
-      <div class="score">
+  <!------------------------>  <!-- page content --> <!------------------------>
 
-      </div>
-      <div class="score">
-
-      </div>
-      <div class="score">
-
-      </div>
-      <div class="score">
-
-      </div>
-    </div>
-  </div>
-
-  <section id="aboutSection">
+  <section class="aboutSection">
+    <h1 class="title">Daniel Alfredsson</h1>
     <div class="container">
-      <h1>Daniel Alfredsson</h1>
-      <div class="container" style="position: relative">
-        <video id="video" src="img/video.mp4" preload="auto" playsinline loop poster="img/poster.png">
-                There was suppose to be a video here, but unfortunetely your browser doesn't support
-                embedded videos.
-        </video>
-        <div class="container">
-          <h3>text about how im still naive. and ambitious. or something like that. </h3>
-        </div>
+      <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius ante et nibh convallis, et cursus enim interdum. Praesent commodo lectus id suscipit dapibus. Etiam iaculis arcu consequat neque fringilla mollis. Donec eget tellus feugiat, feugiat lacus eget, porttitor sapien. Nam turpis tellus, eleifend sed nisi id, feugiat cursus lacus.</p>
       </div>
-
-      <!-- animated bouncing arrow -->
-      <!-- <div id="arrow" class="arrow bounce">
-  </div> -->
+      <div class="container">
+        <a href="about.html#scoreContainer" class="button" name="button">Get to know me ➩</a>
+      </div>
+      <div class="container">
+        <a class="button" name="button" onclick="spotifyFunc()">Spotify thingy ➩</a>
+      </div>
     </div>
   </section>
 
-  <div id="filler1" class="fillerContainer">
-    <div class="container">
-      <div class="quiz">
-        <h3>Daniel mini-quiz!</h3>
-        <p>At what age did Daniel get hos first job?</p>
-        <div id="quiz1" class="container">
-          <div class="answer grow" onclick="checkAnswer(this, 1.1)">
-            <p>Fourteen</p>
-          </div>
-          <div class="answer grow" onclick="checkAnswer(this, 1.2)">
-            <p>Twenty-one</p>
-          </div>
-          <div class="answer grow" onclick="checkAnswer(this, 1.3)">
-            <p>Seventeen</p>
-          </div>
-          <div class="answer grow" onclick="checkAnswer(this, 1.4)">
-            <p>Fifteen</p>
-          </div>
-        </div>
+  <div class="slidingTextContainerParent">
+    <div class="slidingTextContainerChild">
+      <div id="slidingText" class="slidingText">
+        <!-- <span>Hi, I'm so happy to see u! Welcome to my portfolio.&nbsp;</span> -->
+        <!-- <span><span><a href="mailto:alfredsson.d@gmail.com">Hi :)</a></span> glad 2 C U ;)&nbsp;</span> -->
+        <!-- <span><span><a href="mailto:alfredsson.d@gmail.com">Ask</a></span> if you have any questions.&nbsp;</span> -->
+        <!-- <span><span><a href="mailto:alfredsson.d@gmail.com">Hi :)</a></span> glad 2 C U ;)</span> -->
+        <span>Welcome to my personal portfolio :)</span>
       </div>
     </div>
   </div>
@@ -94,46 +67,44 @@
     <div class="container">
       <h1>Work</h1>
     </div>
+    <div class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius ante et nibh convallis, et cursus enim interdum. Praesent commodo lectus id suscipit dapibus. Etiam iaculis arcu consequat neque fringilla mollis. Donec eget tellus feugiat, feugiat lacus eget, porttitor sapien. Nam turpis tellus, eleifend sed nisi id, feugiat cursus lacus.</p>
+    </div>
 
-    <div class="workContainer">
-      <div class="work">
-        <div class="container">
-          <img src="img/work1.png" alt="">
+    <div class="container">
+
+      <div class="workSlides">
+        <div class="work">
+          <div class="container">
+            <img src="img/work1.png" alt="">
+          </div>
         </div>
-      </div>
-
-      <div id="filler2" class="fillerContainer">
-        <div class="container">
-          <div class="quiz">
-            <h3>Daniel mini-quiz!</h3>
-            <p>What did Daniel wanna be when he grew up?</p>
-            <div class="container">
-              <div class="answer grow" onclick="checkAnswer(this, 2.1)">
-                <p>Police officer</p>
-              </div>
-              <div class="answer grow" onclick="checkAnswer(this, 2.2)">
-                <p>Interaction designer</p>
-              </div>
-              <div class="answer grow" onclick="checkAnswer(this, 2.3)">
-                <p>Paleontologist</p>
-              </div>
-              <div class="answer grow" onclick="checkAnswer(this, 2.4)">
-                <p>Astronaut</p>
-              </div>
-            </div>
+        <div class="work">
+          <div class="container">
+            <img src="img/work2.png" alt="">
+          </div>
+        </div>
+        <div class="work">
+          <div class="container">
+            <img src="img/work3.png" alt="">
           </div>
         </div>
       </div>
 
-      <div class="work">
+      <!-- <div class="work">
+        <div class="container">
+          <img src="img/work1.png" alt="">
+        </div>
+      </div> -->
+
+      <!-- <div class="work">
         <div class="container">
           <img src="img/work2.png" alt="">
         </div>
+      </div> -->
 
-      </div>
-
-      <div id="filler3" class="fillerContainer">
-        <div class="container">
+      <!--<div id="filler3" class="fillerContainer">
+         <div class="container">
           <div class="quiz">
             <h3>Daniel mini-quiz!</h3>
             <p>Daniel lives in Malmö today, but where did he grow up?</p>
@@ -153,20 +124,24 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
 
-      <div class="work">
+      <!-- <div class="work">
         <div class="container">
-          <img src="img/work1.png" alt="">
+          <img src="img/work3.png" alt="">
         </div>
+      </div> -->
 
-      </div>
+    </div>
+
+    <div class="container">
+      <a href="work.html#work" class="button" name="button">Check out my work ➩</a>
     </div>
 
   </section>
 
-  <div id="filler4" class="fillerContainer">
-    <div class="container">
+  <!-- <div id="filler4" class="fillerContainer">
+     <div class="container">
       <div class="quiz">
         <h3>Daniel mini-quiz!</h3>
         <p>What's Daniel's favourite genre of movie?</p>
@@ -186,9 +161,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <section id="contactSection">
+  <section class="contactSection">
     <div class="container">
       <h1 style="color: whitesmoke">Contact</h1>
     </div>
